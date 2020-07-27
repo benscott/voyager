@@ -1,5 +1,6 @@
-# voyager
-Tool to analyse GBIF occurrence records against ship logs
+# Voyager
+
+Analyse GBIF marine occurrence records against ship logs
 
 ## Installation
 
