@@ -26,3 +26,23 @@ conda activate voyager
 ```
 python setup.py install
 ```
+
+## CLI Interface
+
+Voyager provides three CLI interfaces
+
+#### 1. analyse
+
+Analyse GBIF occurrences, against IMMA Marine Observations. Outputs DwC-A.
+
+#### 2. app
+
+Convert DwC-A into javascriopt source files, for the data visulisation react app.
+
+#### 3. icoads-search
+
+Search ICOADS data for vessels.
+
+
+
+
