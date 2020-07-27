@@ -1,4 +1,4 @@
-name: gbif
+name: voyager
 channels:
   - conda-forge
   - defaults
