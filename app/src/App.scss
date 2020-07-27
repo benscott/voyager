@@ -1,0 +1,146 @@
+$font-size: 16px;
+$input-height: 2.5em;
+
+// Colors
+$button-default: #58616C;
+$btn-highlight: #A0A7B5;
+$panel-bg: #29323D;
+$panel-text: rgb(160, 167, 180);
+$teal: rgb(31, 186, 214);
+
+$white: rgb(255, 255, 255);
+
+
+@import '~react-widgets/lib/scss/react-widgets';
+
+a {
+  color: $white;
+}
+a:hover, a:visited {
+   color: $white;
+}
+
+
+html, body, .wrapper { height: 100% }
+
+body{
+    background: #00222F;
+}
+
+.panel{
+    background: $panel-bg;
+    // color: $panel-text;
+    // .MuiInputBase-input{
+    //     color: $panel-text;
+    // }
+}
+
+#title{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+#date-slider{
+    position: absolute;
+    bottom: 30px;
+    z-index: 100;
+    width: 100%; 
+    
+    .panel{
+        margin: 0 20px;
+        padding: 2px;
+
+        p{
+            margin-top: 13px;
+        }
+        .MuiSlider-root{
+            margin-top: 11px;
+        }
+    }
+}
+
+#voyage-select{
+    width: 320px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+
+    .MuiSelect-selectMenu{
+        background: $panel-bg;
+        width: 290px;
+        padding: 10px 0 10px 10px;
+    }
+
+    .MuiInput-underline:before{
+        border-bottom-color: darken( $panel-bg, 2% );
+    }
+
+}
+
+#info-panel{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+
+    #data-download{
+        svg{
+            position: relative;
+            top: 7px;
+
+        }
+
+    }
+
+    .MuiTypography-root{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .MuiTypography-body1{
+        font-size: 0.8em;
+    }
+
+    .MuiTypography-h6{
+        margin: 10px 0;
+    }
+
+}
+
+#date{
+    background-color: rgba(41, 50, 60, 0.7);
+    position: absolute;
+    bottom: 100px;
+    z-index: 100;
+    border-radius: 35px;
+    text-align: center;
+    width: 160px;
+    left: 50%;
+    margin-left: -80px;
+    font-weight: 500;
+
+    
+
+    p{
+
+        margin: 8px 0 0;
+        font-size: 1em;
+    }
+    h6{
+
+        margin: 0 0 4px 0;
+        font-weight: 300;
+        font-size: 1.1em;
+
+    }
+
+    
+
+}
+
+
+// DropdownList{
+//     width: 300px;
+// }

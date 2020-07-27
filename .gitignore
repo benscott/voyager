@@ -1,0 +1,4 @@
+input
+notebooks
+.DS_Store
+*.egg-info
