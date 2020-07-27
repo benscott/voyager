@@ -14,10 +14,15 @@ export default class VoyageSelect extends Component {
     }
 
     render() {
+
+        const {
+            AllText = (this.props.selectedVoyage === -1) ? 'Select a voyage' : 'View all voyages',
+        } = this.props;
+
         return (
             <div id="voyage-select">
                 <Select value={this.props.selectedVoyage} onChange={this.onVoyageChange}>
-                    <MenuItem key={-1} value={-1}>Select a voyage</MenuItem>
+                    <MenuItem key={-1} value={-1}>{AllText}</MenuItem>
                     {this.props.voyageMetadata.map((metadata, voyage_id) =>
                         <MenuItem key={voyage_id} value={voyage_id}>{metadata.vesselName} {metadata.year_from}-{metadata.year_to}</MenuItem>
                     )}

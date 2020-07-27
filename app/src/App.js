@@ -338,7 +338,7 @@ export default class App extends Component {
                             </Typography>
 
                                 <Typography color="textSecondary" variant="body1" paragraph={true}>
-                                    <a id="data-download" target="_blank" rel="noopener noreferrer" color="textSecondary" title="Data sources" href="https://github.com/benscott/voyager/output/dwca"><GetApp /> Get the data (DwC-A)</a>
+                                    <a id="data-download" target="_blank" rel="noopener noreferrer" color="textSecondary" title="Data sources" href="https://github.com/benscott/voyager/tree/master/output/dwca"><GetApp /> Get the data (DwC-A)</a>
                                 </Typography>
                             </div>
                         )}
