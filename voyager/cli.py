@@ -238,6 +238,8 @@ def analyse(limit, file_name, vessel_name):
 
     total = 0
 
+    error_totals = {}
+
     for imma_file in imma_files:
         vessel = _cli_imma_file_get_vessel(imma_file.stem)
 
@@ -277,12 +279,19 @@ def analyse(limit, file_name, vessel_name):
 
             occurrence_stats = occurrences.get_stats()
 
+            for error, count in occurrence_stats['errors'].items():
+                error_totals.setdefault(error, 0)
+                error_totals[error] += count
+
             total += occurrence_stats['total']
 
         except:
             continue
 
     click.secho(f'Total: {total}', fg='green')
+
+    for error, error_total in error_totals.items():
+        click.secho(f'{error}: {error_total}', fg='green')
 
 
 @ cli.command()
