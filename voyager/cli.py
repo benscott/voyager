@@ -3,7 +3,6 @@
 import ast
 import click
 import click_log
-import geojson
 import re
 import requests
 import requests_cache
@@ -12,15 +11,9 @@ from bs4 import BeautifulSoup
 import itertools
 import pandas as pd
 import json
-from tqdm import tqdm
 from operator import attrgetter
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-
-# from voyager.config import logger, CACHE_DIR, OUTPUT_DIR, APP_DATA_DIR, INPUT_DIR
-# from voyager.config import OUTPUT_DIR, VOYAGES_DIR, IMMA_DIR, ICOADS_DIR, DWCA_OUTPUT_DIR
-# # , OUTPUT_DIR, INPUT_DIR, GEOJSON_FILE, ROUTE_DIR, OLD_WEATHER_DIR, VOYAGES_DIR
-# # from voyager.utils import years_to_range, imma_file_to_csv
 
 from voyager.occurrences import Occurrences
 from voyager.gbif import GBIF
