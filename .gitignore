@@ -1,5 +1,7 @@
-input
+input/GBIF                 
+input/IMMA1_R3.1.0_COMBINED 
 notebooks
 .DS_Store
 *.egg-info
 __pycache__
+dist

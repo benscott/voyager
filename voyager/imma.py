@@ -1,7 +1,6 @@
 
 import IMMA as imma_reader
 import pandas as pd
-import geopandas
 from shapely.ops import nearest_points
 from shapely.geometry import Point, LineString, MultiPoint
 from geopy.distance import geodesic

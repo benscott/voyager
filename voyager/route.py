@@ -3,7 +3,6 @@ from dateutil.relativedelta import relativedelta
 import pandas as pd
 import IMMA as imma_reader
 import numpy as np
-import geopandas
 from shapely.ops import nearest_points
 from shapely.geometry import Point, LineString, MultiPoint
 from geopy.distance import geodesic
