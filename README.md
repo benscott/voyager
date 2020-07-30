@@ -1,10 +1,10 @@
 # Voyager
 
-This library analyses GBIF marine occurrence records against historical ships log data from ICOADS and OldWeather, to correct missing geospatial data (collection event date, latitude and longitude).  
+This library analyses [GBIF](https://www.gbif.org) marine occurrence records against historical ships log data from [International Comprehensive Ocean-Atmosphere Data Set (ICOADS)](https://icoads.noaa.gov/) and [OldWeather](https://www.oldweather.org/), to correct missing geospatial data (collection event date, latitude and longitude).  
 
 A CLI interface performs these analyses and outputs a DarwinCore archive file for each identified voyage and occurrences collected on the expedition. Detailed instructions for the CLI is provided below. 
 
-A React/DeckGL app is included with the CLI, to visualise the voyages and explore occurrences collected on each trip. 
+A [React](https://reactjs.org/) & [DeckGL](https://deck.gl/) app is included with the CLI, to visualise the voyages and explore occurrences collected on each trip. 
 
 <img alt="Data Visualisation" src="https://raw.githubusercontent.com/benscott/voyager/master/input/screenshot.png" width="100%" />
 
@@ -60,23 +60,20 @@ python setup.py install
 
 #### 1.GBIF
 
-Download occurrences from GBIF as a Darwin Core Acrhive (NOTE: this will not work with the 'Simple' data export.)
-
-https://www.gbif.org/occurrence/search
+Download [occurrences from GBIF](https://www.gbif.org/occurrence/search) as a Darwin Core Acrhive (NOTE: this will not work with the 'Simple' data export.)
 
 To save time running these scripts, it is recommended a subset of GBIF data is downloaded, with dates matching those of the voyages to be analysed. For example, the visualisation uses records collected from 1750 to 1901.
 
 
 #### 2. ICOADS
 
-Data from the International Comprehensive Ocean-Atmosphere Data Set (ICOADS) is available to download from 
-in International Maritime Meteorological Archive (IMMA) Format.
+ICOADS data is available to download from https://www.ncei.noaa.gov/data/marine/icoads3.0/ in International Maritime Meteorological Archive (IMMA) Format.
 
 These are organised by month and year, and it is recommended only including the years matching the time period to be analysed. Each monthly `.imma` file should be placed in a directory together. 
 
 #### 3. Old Weather
 
-Some Old Weather .imma files are included in this repsository, and many others can be found on https://github.com/oldweather (place any additional in directory `input/imma`). 
+Some Old Weather .imma files are included in this repsository, and many others can be found on their [Github repository](https://github.com/oldweather). Additional .imma files should be placed in directory `input/imma`. 
 
 The records from Old Weather is included in the ICOADS dataset but inclusion of the vessel name is patchy, so using these is recommended.
 
