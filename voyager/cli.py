@@ -235,7 +235,7 @@ def analyse(limit, file_name, vessel_name):
 
 
 @ cli.command()
-@ click.option('-n', '--vessel-name')
+@ click.option('-n', '--vessel-name', required=True)
 @ click.option('-y', '--years', required=True)
 @ click.option('-l', '--limit')
 @ click_log.simple_verbosity_option(logger)
@@ -244,14 +244,17 @@ def icoads_search(vessel_name, years, limit):
 
     icoads = ICOADS()
 
-    if vessel_name:
-        years = _cli_parse_years(years)
-        result = icoads.search(vessel_name, years)
+    years = _cli_parse_years(years)
+    result = icoads.search(vessel_name, years)
+
+    if not result.empty:
         year_from = result['datetime'].min().year
         year_to = result['datetime'].max().year
         ship_ids = result['ship_id'].unique()
         click.secho(
             f"Log found for ID {ship_ids} - {result.shape[0]} entries {year_from}-{year_to}", fg='green')
+    else:
+        logger.error(f'No log records found for {vessel_name} {years}')
 
 
 @ cli.command()
@@ -300,39 +303,7 @@ def icoads_to_imma(vessel_name, years):
 
     else:
 
-        logger.error('')
-
-
-# @ cli.command()
-# @ click.option('-n', '--vessel-name')
-# @ click.option('-y', '--years', required=True)
-# @ click_log.simple_verbosity_option(logger)
-# def icoads_analyse(vessel_name, years):
-
-#     icoads = ICOADS()
-#     gbif = GBIF()
-
-#     years = _cli_parse_years(years)
-#     result = icoads.search(vessel_name, years)
-#     if not result.empty:
-#         click.secho(
-#             f"Log found for ID {vessel_name} - {result.shape[0]} entries in {'-'.join(years)}", fg='green')
-#         route = Route(result)
-#         occurrences = Occurrences(
-#             route, gbif, vessel=vessel_name
-#         )
-
-#         dwca_file = f'{vessel_name.lower()}-{route.year_from}-{route.year_to}.csv'
-#         occurrences.to_dwca(DWCA_OUTPUT_DIR / dwca_file)
-#         occurrence_stats = occurrences.get_stats()
-#         for error, count in occurrence_stats['errors'].items():
-#             click.secho(f'{error}: {count}', fg='green')
-
-#         click.secho(
-#             f"Inferrences made on: {occurrence_stats['inferred_on'].to_dict()}", fg='green')
-
-#     else:
-#         logger.error('No log entries found for %s %s', vessel_name, years)
+        logger.error(f'No log records found for {vessel_name} {years}')
 
 
 def _cli_parse_years(years):
