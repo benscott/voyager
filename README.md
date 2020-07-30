@@ -6,7 +6,7 @@ A CLI interface performs these analyses and outputs a DarwinCore archive file fo
 
 A React/DeckGL app is included with the CLI, to visualise the voyages and explore occurrences collected on each trip. 
 
-<img alt="Data Visualisation" src="https://raw.githubusercontent.com/benscott/voyager/master/input/screenshot.png" width="500" />
+<img alt="Data Visualisation" src="https://raw.githubusercontent.com/benscott/voyager/master/input/screenshot.png" width="100%" />
 
 ## Data Visualisation - `.\app`
 
