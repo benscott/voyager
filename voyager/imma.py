@@ -19,7 +19,6 @@ class IMMA():
     def _parse_imma_file(file_path):
         route = []
         imma_records = imma_reader.get(str(file_path))
-
         for record in imma_records:
             route.append({
                 'year': record['YR'],

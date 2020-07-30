@@ -1,25 +1,3 @@
-
-# import IMMA
-# import pandas as pd
-
-
-# def imma_file_to_csv(filepath, output_dir):
-#     route = []
-#     imma = IMMA.get(str(filepath))
-
-#     for record in imma:
-#         route.append({
-#             'year': record['YR'],
-#             'month': record['MO'],
-#             'day': record['DY'],
-#             'lat': record['LAT'],
-#             'lon': record['LON']
-#         })
-
-#     df = pd.DataFrame(route)
-#     df = df.dropna()
-#     df.to_csv(output_dir / f'{filepath.stem}.csv', index=False)
-
 import re
 
 # Regex

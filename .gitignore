@@ -5,3 +5,4 @@ notebooks
 *.egg-info
 __pycache__
 dist
+error.log

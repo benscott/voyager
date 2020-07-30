@@ -9,6 +9,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        voyager=voyager.cli:cli
+        voyager-cli=voyager.cli:cli
     ''',
 )
