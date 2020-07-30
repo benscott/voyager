@@ -104,9 +104,8 @@ class Occurrences():
         if self._frames:
             df = pd.concat(self._frames)
             df = df.drop_duplicates(subset='gbifID', keep="last")
-
-            logger.error('%s Occurrences with complete data',
-                         df.shape[0])
+            logger.info('TOTAL: %s Occurrences with complete data',
+                        df.shape[0])
             return df
         else:
             logger.error('No occurrences found for %s - %s',
@@ -117,8 +116,8 @@ class Occurrences():
     def _get_location_by_date(self, date):
         location = self.route.get_location_by_date(date)
 
-        # if not location:
-        #     location = [np.nan, np.nan]
+        if not location:
+            location = [np.nan, np.nan]
 
         return pd.Series(location)
 
@@ -238,6 +237,11 @@ class Occurrences():
 
                 date_not_location[['decimalLatitude', 'decimalLongitude']] = date_not_location['datetime'].apply(
                     self._get_location_by_date)
+
+                # Make sure we don;t have any NaNs
+                date_not_location = date_not_location[df['decimalLatitude'].notna(
+                ) & df['decimalLongitude'].notna(
+                )]
 
                 logger.info('%s occurences with date and inferred location.',
                             date_not_location.shape[0])

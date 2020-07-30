@@ -9,6 +9,7 @@ CACHE_DIR = INPUT_DIR / '.cache'
 
 # Source of ships logs
 IMMA_DIR = INPUT_DIR / 'imma'
+IMMA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Exports from ICOADS
 ICOADS_DIR = INPUT_DIR / 'icoads'
