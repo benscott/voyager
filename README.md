@@ -4,9 +4,10 @@ This library analyses [GBIF](https://www.gbif.org) marine occurrence records aga
 
 A CLI interface performs these analyses and outputs a DarwinCore archive file for each identified voyage and occurrences collected on the expedition. Detailed instructions for the CLI is provided below. 
 
-A [React](https://reactjs.org/) & [DeckGL](https://deck.gl/) app is included with the CLI, to visualise the voyages and explore occurrences collected on each trip. 
+A [React](https://reactjs.org/) & [DeckGL](https://deck.gl/) app is included with the CLI, to visualise the voyages and explore occurrences collected on each trip. This [visulisation is available online](https://voyager-gbif.netlify.app/).
 
-<img alt="Data Visualisation" src="https://raw.githubusercontent.com/benscott/voyager/master/input/screenshot.png" width="100%" />
+<a href="https://voyager-gbif.netlify.app/"><img alt="Data Visualisation" src="https://raw.githubusercontent.com/benscott/voyager/master/input/screenshot.png" width="100%" /></a>
+
 
 ## Data Visualisation - `.\app`
 
